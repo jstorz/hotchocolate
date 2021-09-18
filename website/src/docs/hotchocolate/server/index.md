@@ -29,3 +29,9 @@ With Global State we can define properties on a per-request basis to be made ava
 Though not considered one of the responsibilities of a GraphQL server, for convenience, Hot Chocolate provides file upload support.
 
 [Learn more about uploading files](/docs/hotchocolate/server/uploading-files)
+
+# Instrumentation
+
+We can profile and measure our Hot Chocolate GraphQL server by hooking into specific events in the execution.
+
+[Learn more about instrumentation](/docs/hotchocolate/server/instrumentation)
