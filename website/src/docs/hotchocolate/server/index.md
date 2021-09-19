@@ -32,6 +32,6 @@ Though not considered one of the responsibilities of a GraphQL server, for conve
 
 # Instrumentation
 
-We can profile and measure our Hot Chocolate GraphQL server by hooking into specific events in the execution.
+We can gather instrumentation data about our GraphQL server, by hooking into various events in the execution process of a GraphQL request. As part of instrumentation we are also covering the usage of _Apollo Tracing_.
 
 [Learn more about instrumentation](/docs/hotchocolate/server/instrumentation)
