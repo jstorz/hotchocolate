@@ -441,5 +441,22 @@ namespace StrawberryShake.CodeGeneration.CSharp
                     abc: String
                 }");
         }
+
+        [Fact]
+        public void Query_With_Lowercase_Custom_Scalar()
+        {
+            AssertResult(
+                strictValidation: false,
+                @"
+                    query GetItemsById($item_id: uuid!) {
+                        items(where: {id: {_eq: $item_id}}) {
+                            id
+                            name
+                        }
+                    }
+                ",
+                FileResource.Open("LowercaseScalar.Schema.graphql"),
+                "extend schema @key(fields: \"id\")");
+        }
     }
 }

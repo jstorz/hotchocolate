@@ -23,7 +23,7 @@ namespace StrawberryShake.CodeGeneration.Mappers
 
                             INamedTypeDescriptor namedTypeDescriptor =
                                 context.Types.Single(type =>
-                                    type.Name.Equals(Utilities.NameUtils.GetClassName(typeName)));
+                                    type.Name.Equals(Utilities.NameUtils.GetClassName(typeName), StringComparison.OrdinalIgnoreCase));
 
                             return new PropertyDescriptor(
                                 arg.Name,
