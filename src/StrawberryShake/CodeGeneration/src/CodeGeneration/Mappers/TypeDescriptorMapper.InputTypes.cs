@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using HotChocolate;
@@ -77,7 +78,7 @@ namespace StrawberryShake.CodeGeneration.Mappers
             Dictionary<NameString, InputTypeDescriptorModel> typeDescriptors)
         {
             return typeDescriptors.Values
-                .First(t => t.Model.Name.Equals(fieldNamedType.Name))
+                .First(t => t.Model.Name.Equals(fieldNamedType.Name, StringComparison.OrdinalIgnoreCase))
                 .Descriptor;
         }
     }

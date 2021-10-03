@@ -458,5 +458,22 @@ namespace StrawberryShake.CodeGeneration.CSharp
                 FileResource.Open("LowercaseScalar.Schema.graphql"),
                 "extend schema @key(fields: \"id\")");
         }
+
+        [Fact]
+        public void Query_With_Lowercase_Input()
+        {
+            AssertResult(
+                strictValidation: false,
+                @"
+                    query GetItemsById($filter: items_bool_exp!) {
+                        items(where: $filter) {
+                            id
+                            name
+                        }
+                    }
+                ",
+                FileResource.Open("LowercaseScalar.Schema.graphql"),
+                "extend schema @key(fields: \"id\")");
+        }
     }
 }
